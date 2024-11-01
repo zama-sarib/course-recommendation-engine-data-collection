@@ -143,7 +143,7 @@ if __name__ == '__main__':
         print("----------------------------------Data Collection started ----------------------------------------------")
         
         logging.info("-----------------------------Downloading Data ---------------------------------------")
-        subprocess.run(["sh", "./script.sh"]) # Download the data.
+        subprocess.run(["sh", "./scripts/script.sh"]) # Download the data.
         logging.info('-----------------------------Download Completed --------------------------------------')
         preprocess = Preprocess()
         preprocess.unzip_data(preprocess.dataset_path) 
