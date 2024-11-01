@@ -28,7 +28,7 @@ jobs:
       - name: Run Unit Test cases
         run: echo "Running Unit Test cases"
 
-  build-and-push-ecr-image:
+  build-docker-image:
       name: Continuous Delivery
       needs: integration
       runs-on: ubuntu-latest
