@@ -41,7 +41,7 @@ jobs:
         env:
           IMAGE_TAG: DataCollection
         run: |
-          docker build -t Data_collection .
+          docker build -t data_collection .
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
 
