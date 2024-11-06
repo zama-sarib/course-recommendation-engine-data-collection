@@ -2,4 +2,3 @@ requests==2.32.3
 kaggle==1.6.17
 from-root==1.0.2
 pandas
--e .

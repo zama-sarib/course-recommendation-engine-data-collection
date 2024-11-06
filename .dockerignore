@@ -1,6 +1,12 @@
 env
+venv
 .git
 Dockerfile
 .idea
 ./Dataset/*
 logs
+__pycache__
+*egg*
+.ipynb*
+build
+dist

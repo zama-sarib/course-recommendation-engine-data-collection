@@ -1,11 +1,14 @@
-FROM python:3.9.14-slim-bullseye
+FROM python:alpine as build
 
-COPY . /recommendationengine
+WORKDIR /source
+COPY . /source/
+RUN python3 -m venv /source/venv
+RUN . /source/venv/bin/activate && \
+python3 -m ensurepip --upgrade && \
+python3 -m pip install -r /source/requirements.txt
 
-WORKDIR /recommendationengine
+FROM python:alpine as final
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
-EXPOSE 8080
-
-CMD ["python","main.py"]
+WORKDIR /source
+COPY --from=build /source /source
+CMD . /source/venv/bin/activate && python3 main.py
