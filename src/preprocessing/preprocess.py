@@ -149,8 +149,8 @@ class Preprocess():
             preprocess.unzip_data(preprocess.dataset_path) 
             for folder in os.listdir(preprocess.dataset_path):
                 complete_file_path = os.path.join(preprocess.dataset_path,folder)
-                print("Complete file path before preprocessing")
-                logging.info("Complete file path before preprocessing")
+                print(f"Complete file path before preprocessing: {complete_file_path}")
+                logging.info(f"Complete file path before preprocessing. {complete_file_path}")
                 if 'revenue' in complete_file_path:
                     df1 = preprocess.transformation_one(complete_file_path)
                 elif 'finance' in complete_file_path:
